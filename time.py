@@ -24,5 +24,5 @@ except melone.error.URLError as e:
     print("URLError: %s" % (e.reason))
     exit(1)
 
-print("サーバー時間 (UTC): %s" % (servertime))
-print("サーバー時間 (JST): %s" % (servertime.astimezone(TZHours(9))))
+print("Server Time (UTC): %s" % (servertime))
+print("Server Time (JST): %s" % (servertime.astimezone(TZHours(9))))
