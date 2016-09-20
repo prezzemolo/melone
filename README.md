@@ -1,7 +1,6 @@
 melone
 ==========
-[![][mit-badge]][mit] [![][python-badge]][python]  
-[![][issue-badge]][issue] [![][pulls-badge]][pulls]  
+[![][mit-badge]][mit] [![][python-badge]][python] [![][issue-badge]][issue] [![][pulls-badge]][pulls]  
 a client for the pomodori api server written by python 3.
 
 LICENSE
