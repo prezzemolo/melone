@@ -4,9 +4,7 @@
 from . import error as __error
 
 def json(url) :
-    '''
-    a function receive json api wrapping urllib2.
-    '''
+    ''' a function receive json api using json and urllib2 modules. '''
     import urllib.request
     import json
 
