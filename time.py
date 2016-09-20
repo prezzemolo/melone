@@ -3,8 +3,10 @@
 import melone
 import datetime
 
+# initialize class
 pomodori = melone.pomodori('http://cherry.prezzemolo.ga/')
 
+# timezone class
 class TZHours(datetime.tzinfo):
     def __init__(self, hours):
         self.hours = hours
@@ -15,6 +17,7 @@ class TZHours(datetime.tzinfo):
     def tzname(self, dt):
         return '%02d' % (self.hours)
 
+# retrive servertime
 try:
     servertime = pomodori.serverTime()
 except melone.error.HTTPError as e:
@@ -24,5 +27,6 @@ except melone.error.URLError as e:
     print("URLError: %s" % (e.reason))
     exit(1)
 
+# show result
 print("Server Time (UTC): %s" % (servertime))
 print("Server Time (JST): %s" % (servertime.astimezone(TZHours(9))))
