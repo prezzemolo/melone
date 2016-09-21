@@ -20,8 +20,8 @@ class pomodori:
         ''' get the pomodori api server's time and return datetime.datetime aware object. '''
         import datetime
         try:
-            responce = access(self.url + 'time.php')
-            return datetime.datetime.fromtimestamp(responce['unix'], datetime.timezone.utc)
+            responce = access(self.url + 'time/epoch')
+            return datetime.datetime.fromtimestamp(responce['epoch'], datetime.timezone.utc)
         except error.HTTPError as e:
             raise e
         except error.URLError as e:
@@ -30,7 +30,7 @@ class pomodori:
     def globalIP(self):
         ''' get client global address and return string. '''
         try:
-            return access(self.url + 'ip.php')
+            return access(self.url + 'ip/remote')['remote']
         except error.HTTPError as e:
             raise e
         except error.URLError as e:
