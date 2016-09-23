@@ -26,6 +26,8 @@ class pomodori:
             raise e
         except error.URLError as e:
             raise e
+        except error.JSONDecodeError as e:
+            raise e
 
     def globalIP(self):
         ''' get client global address and return string. '''
@@ -34,4 +36,6 @@ class pomodori:
         except error.HTTPError as e:
             raise e
         except error.URLError as e:
+            raise e
+        except error.JSONDecodeError as e:
             raise e

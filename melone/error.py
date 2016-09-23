@@ -12,3 +12,12 @@ class URLError(Exception):
     ''' wrap urllib.error.URLError '''
     def __init__(self, reason):
         self.reason = reason
+
+class JSONDecodeError(Exception):
+    ''' wrap urllib.error.URLError '''
+    def __init__(self, msg, doc, pos, lineno, colno):
+        self.msg = msg
+        self.doc = doc
+        self.pos = pos
+        self.lineno = pos
+        self.colno = colno
