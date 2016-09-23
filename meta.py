@@ -19,4 +19,6 @@ except melone.error.JSONDecodeError as e:
     exit(1)
 
 # show result
-print("Server Version: %s" % (meta['version']))
+print("Version: %s" % (meta['version']))
+print("Description: %s" % (meta['description']))
+print("GitHub URL: %s" % (meta['github']))
