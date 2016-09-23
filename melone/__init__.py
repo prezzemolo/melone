@@ -39,3 +39,14 @@ class pomodori:
             raise e
         except error.JSONDecodeError as e:
             raise e
+
+    def serverMeta(self):
+        ''' get client global address and return string. '''
+        try:
+            return access(self.url + 'meta')
+        except error.HTTPError as e:
+            raise e
+        except error.URLError as e:
+            raise e
+        except error.JSONDecodeError as e:
+            raise e
