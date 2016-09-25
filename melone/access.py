@@ -12,7 +12,12 @@ def json(url) :
         with urllib.request.urlopen(url) as response:
             return json.loads(response.read().decode('utf8'))
     except urllib.error.HTTPError as e:
-        raise __error.HTTPError(e.code, e.reason, e.read())
+        __read = e.read()
+        try:
+            __reason = json.loads(__read.decode('utf8'))
+            raise __error.HTTPError(e.code, e.reason, __reason)
+        except:
+            raise __error.HTTPError(e.code, e.reason, __read)
     except urllib.error.URLError as e:
         raise __error.URLError(e.reason)
     except json.JSONDecodeError as e:
