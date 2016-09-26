@@ -26,9 +26,6 @@ except melone.error.HTTPError as e:
 except melone.error.URLError as e:
     print("URLError: %s" % (e.reason))
     exit(1)
-except melone.error.JSONDecodeError as e:
-    print("JSONDecodeError: %s" % (e.msg))
-    exit(1)
 
 # show result
 print("Server Time (UTC): %s" % (servertime))

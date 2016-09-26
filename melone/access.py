@@ -15,5 +15,3 @@ def json(url) :
         raise __error.HTTPError(e.code, e.reason, e.read())
     except urllib.error.URLError as e:
         raise __error.URLError(e.reason)
-    except json.JSONDecodeError as e:
-        raise __error.JSONDecodeError(e.msg, e.doc, e.pos, e.lineno, e.colno)
