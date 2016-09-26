@@ -22,10 +22,6 @@ try:
     servertime = pomodori.serverTime()
 except melone.error.HTTPError as e:
     print("HTTPError: %d %s" % (e.code, e.reason))
-    try:
-        print("APIError: %d %s" % (e.response['status'], e.response['description']))
-    except:
-        print("APIError: %s" % (e.response))
     exit(1)
 except melone.error.URLError as e:
     print("URLError: %s" % (e.reason))
