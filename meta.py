@@ -17,5 +17,5 @@ except melone.error.URLError as e:
 
 # show result
 print("Version: %s" % (meta['version']))
-print("Description: %s" % (meta['description']))
-print("GitHub URL: %s" % (meta['github']))
+print("Description: %s" % (meta['detail']))
+print("GitHub URL: %s" % (meta['git']))
