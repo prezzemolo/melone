@@ -48,7 +48,7 @@ class pomodori:
     def nicovideoInfo(self, videoId):
         ''' get video information uploaded to nicovideo. '''
         try:
-            return access(self.url + 'nicovideo/info?videoId=' + videoId)
+            return access(self.url + 'nicovideo/info?id=' + videoId)
         except error.HTTPError as e:
             raise e
         except error.URLError as e:
